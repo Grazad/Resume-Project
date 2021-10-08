@@ -1,0 +1,48 @@
+ {% extends "user/base.html" %}
+ {% block body %}
+      <!-- Main Content -->
+
+      <div class="main-content">
+        <section class="section">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Add Skills</h4>
+                  </div>
+                  <form method="post">
+                  <div class="card-body">
+                               {% for message in get_flashed_messages()%}
+                            &nbsp;&nbsp; &nbsp;&nbsp;<p style='color:purple'>{{message}}</p>
+
+                          {%endfor%}
+                    <div class="form-group row mb-4">
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Skill</label>
+                      <div class="col-sm-12 col-md-7">
+                        <input type="text" name="skill" id="skill" class="form-control">
+                      </div>
+                    </div>
+                    <div class="form-group row mb-4">
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Percentage(%)</label>
+                      <div class="col-sm-12 col-md-7">
+                        <select class="form-control selectric" name="percent" id="percent">
+                          {% for i in range(100) %}{% set i=i+1%}<option value="{{i}}">{{i}} % </option>{% endfor %}
+
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-group row mb-4">
+                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                      <div class="col-sm-12 col-md-7">
+                        <button class="btn btn-primary">Add Now</button>
+                      </div>
+                    </div>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+ {% endblock%}

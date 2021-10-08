@@ -1,0 +1,56 @@
+ {% extends "user/base.html" %}
+ {% block body %}      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+              <div class="col-20 col-md-20 col-lg-20">
+                <div class="card">
+                  <div class="padding-20">
+                    <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="home-tab2" data-toggle="tab" href="#about" role="tab"
+                          aria-selected="true"><span>UPDATE ACCOUNT</span></a>
+                      </li>
+                     </ul>
+                      <form method="post" action="{{url_for('account')}}" class="needs-validation" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="row">
+                              <div class="form-group col-md-6 col-12">
+                                <label>Username</label>
+                                <input type="text" class="form-control" value="{{session['username']}}" readonly>
+                              </div>
+                              <div class="form-group col-md-6 col-12">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control" name="name" id="name" value="{{b.name}}" required>
+                                <div class="invalid-feedback">
+                                  Please fill in the last name
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="form-group col-md-7 col-12">
+                                <label>Email</label>
+                                <input type="email" class="form-control" name="email" id="email" value="{{b.email}}" required>
+                                <div class="invalid-feedback">
+                                  Please fill in the email
+                                </div>
+                              </div>
+                              <div class="form-group col-md-5 col-12">
+                                <label>Phone</label>
+                                <input type="tel" class="form-control" name="phone" id="phone"  value="{{b.phone}}" required>
+                              </div>
+                            </div>
+
+                          <div class="card-footer text-right">
+                            <button class="btn btn-primary">Save Changes</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {%endblock%}

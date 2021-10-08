@@ -1,0 +1,52 @@
+ {% extends "user/base.html" %}
+ {% block body %}
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+
+              <div class="col-20 col-md-20 col-lg-20">
+                <div class="card">
+                  <form action="{{url_for('add_degree')}}" method="post">
+                    <div class="card-header">
+                      <h4>ADD DEGREE/CERTIFICATE</h4>
+                    </div>
+                    <div class="card-body">
+                                   {% for message in get_flashed_messages()%}
+                            &nbsp;&nbsp; &nbsp;&nbsp;<p style='color:purple'>{{message}}</p>
+
+                          {%endfor%}
+                       <div class="row">
+                      <div class="form-group col-md-6 col-12">
+                        <label>DEGREE NAME</label>
+                        <input type="text" name="degree" id="degree" class="form-control" required="">
+                      </div>
+                       <div class="form-group col-md-6 col-12">
+                        <label>INSTITUTE NAME</label>
+                        <input type="text" class="form-control" name="institute" required="">
+                      </div>
+                              <div class="form-group col-md-6 col-12">
+                        <label>YEAR START</label>(YYYY)
+                                  <input type="text" id="s_date" name="s_date" PATTERN="{4,4}"  class="form-control" required="">
+                      </div>
+                              <div class="form-group col-md-6 col-12">
+                        <label>YEAR END</label> (YYYY)
+                        <input type="text"  class="form-control" name="e_date" pattern="{4}" id="e_date" required="">
+
+                      </div>
+                           </div>
+
+                      <div class="form-group">
+                        <label>ABOUT INSTITUTE</label>
+                        <textarea class="form-control" required="" name="about" id="about"></textarea>
+                      </div>
+
+                    <div class="card-footer text-right">
+                      <button class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+          </div>
+        </section>
+         {% endblock%}

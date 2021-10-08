@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- users-404.html  21 Nov 2019 04:05:02 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>user - Something Went Wrong!</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="{{url_for('static',filename='user/assets/css/app.min.css')}}">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{{url_for('static',filename='user/assets/css/style.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='user/assets/css/components.css')}}">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="{{url_for('static',filename='user/assets/css/custom.css')}}">
+  <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+</head>
+
+{% block body%}{%endblock%}
+  <!-- General JS Scripts -->
+  <script src="{{url_for('static',filename='user/assets/js/app.min.js')}}"></script>
+  <!-- JS Libraies -->
+  <!-- Page Specific JS File -->
+  <!-- Template JS File -->
+  <script src="{{url_for('static',filename='user/assets/js/scripts.js')}}"></script>
+  <!-- Custom JS File -->
+  <script src="{{url_for('static',filename='user/assets/js/custom.js')}}"></script>
+</body>
+
+
+</html>

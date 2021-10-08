@@ -1,0 +1,63 @@
+ {% extends "user/base.html" %}
+ {% block body %}
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Expertise Detail</h4>
+                    <div class="card-header-form">
+                      <form>
+                        <div class="input-group">
+                            <div > <a href="{{url_for('add_expertise')}}" class="btn btn-success fa fa-plus">ADD NEW</a></div>
+                          <input type="text" class="form-control" placeholder="Search">
+                          <div class="input-group-btn">
+                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <tr>
+                                     {% for message in get_flashed_messages()%}
+                            &nbsp;&nbsp; &nbsp;&nbsp;<p style='color:purple'>{{message}}</p>
+
+                          {%endfor%}
+                          <th class="text-center">
+                          </th>
+                          <th>S.N</th>
+                          <th>Experience</th>
+                          <th>Information</th>
+                          <th>Action</th>
+                        </tr>
+                        <tr>
+                             {% for e in expert%}
+                          <td class="p-0 text-center">
+
+                          <td>{{ loop.index }}</td>
+
+                          <td class="align-middle">
+                          {{e.Expertise.exp_name}}
+                        </td>
+                          <td>{{e.Expertise.exp_info}}</td>
+                          <td><a href="/edit-experience/edit_id={{e.Expertise.id}}" class="btn-sm btn-primary fa fa-edit"></a>
+                          <a href="/delete-experience/id={{e.Expertise.id}}" class="btn-sm btn-danger fa fa-trash"> </a>
+                          </td>
+                        </tr>
+                             {%endfor%}
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </section>
+ {% endblock%}
