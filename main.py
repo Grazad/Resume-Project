@@ -9,9 +9,9 @@ app = Flask(__name__)
 
 db = SQLAlchemy()
 app.config['WTF_CSRF_SECRET_KEY'] = "b'f83l\x19\xad\x84\x08\xaa\xfa\x8b{X\x8b\x9eM\x83l\x19\xad\x84\x08\xaa"
-app.config["SQLALCHEMY_DATABASE_URI"]="mysql+pymysql://admin:12345678@localhost:3306/fayaz"
+app.config["SQLALCHEMY_DATABASE_URI"]="mysql+pymysql://root:grazad@localhost:3306/fayaz"
 app.config['SECRET_KEY'] = "b'f\xfa\x8b{X\x8b84\x08\\x19\xad\x84\x08\xaa"
-app.config['UPLOAD_FOLDER'] = '/home/wali/PycharmProjects/resume/static/img/profile/'
+app.config['UPLOAD_FOLDER'] = '/home/grazad/mini/resume/static/img/profile/'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Initialize 
